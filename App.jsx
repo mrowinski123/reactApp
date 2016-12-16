@@ -149,6 +149,11 @@ class App extends React.Component {
         this.state = {
             data: "initial data..."
         }
+
+        this.person = {
+            id:"",
+            name:""
+        }
         this.updateState = this.updateState.bind(this);
     }
     updateState(e){
