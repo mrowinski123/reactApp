@@ -2,12 +2,10 @@
  * Created by mrowinski on 16.12.2016.
  */
 import React from 'react';
-
+/*
 class App extends React.Component {
    constructor() {
        super();
-
-
        this.state = {
            data:
            [
@@ -39,13 +37,17 @@ class App extends React.Component {
                <Clock/>
                <table>
                    <tbody>
-                   {this.state.data.map((person,i) => <TableRow key = {i} data = {person}/>)}
+                        {this.state.data.map(addPerson)}
                    </tbody>
                </table>
                <DynamicArray />
            </div>
 
        );
+
+       function addPerson(person, i) {
+           return <TableRow key={i} data={person}/>;
+       }
    }
 }
 
@@ -131,6 +133,46 @@ class DynamicArray extends React.Component {
               <button onClick={this.setStateHandler}>Add object</button>
               <p>Array: {this.state.array}</p>
           </div>
+        );
+    }
+}
+
+export default App;
+
+
+    */
+
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            data: "initial data..."
+        }
+        this.updateState = this.updateState.bind(this);
+    }
+    updateState(e){
+        this.setState({data: e.target.value});
+    }
+
+    render() {
+        return(
+          <div>
+              <Header/>
+              <input type = "text" value = {this.state.data}
+                     onChange={this.updateState} />
+              <h4>{this.state.data}</h4>
+          </div>
+        );
+    }
+}
+
+class Header extends React.Component {
+    render() {
+        return(
+            <div>
+                <h1>React Exercises</h1>
+            </div>
         );
     }
 }
