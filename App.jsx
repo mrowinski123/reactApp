@@ -35,14 +35,16 @@ class App extends React.Component {
    render(){
        return(
            <div>
-               <Clock/>
                <Header/>
+               <Clock/>
                <table>
                    <tbody>
                    {this.state.data.map((person,i) => <TableRow key = {i} data = {person}/>)}
                    </tbody>
                </table>
+               <DynamicArray />
            </div>
+
        );
    }
 }
@@ -51,7 +53,7 @@ class Header extends React.Component {
     render() {
         return(
           <div>
-              <h1>Header</h1>
+              <h1>React Exercises</h1>
           </div>
         );
     }
@@ -105,4 +107,31 @@ class Clock extends React.Component {
     }
 }
 
+class DynamicArray extends React.Component {
+    constructor() {
+        super();
+
+        this.state = {
+            array:[]
+        }
+
+        this.setStateHandler = this.setStateHandler.bind(this);
+    };
+
+    setStateHandler() {
+        var item = "obj ";
+        var myArray = this.state.array;
+        myArray.push(item);
+        this.setState({array: myArray});
+    };
+
+    render() {
+        return(
+          <div id="array">
+              <button onClick={this.setStateHandler}>Add object</button>
+              <p>Array: {this.state.array}</p>
+          </div>
+        );
+    }
+}
 export default App;
