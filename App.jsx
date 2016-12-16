@@ -38,7 +38,7 @@ class App extends React.Component {
                <Header/>
                <table>
                    <tbody>
-                   {this.state.data.map((person,i) => <TableRow key = {i} data = {person}/>)}
+                   {this.state.data.map((person,i) => <TableRow key = {i} data = {person}/>)} //lambda expression
                    </tbody>
                </table>
            </div>
