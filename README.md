@@ -1,7 +1,7 @@
 # reactApp
 source: https://www.tutorialspoint.com/reactjs/reactjs_components.htm
 
-If the setup is complete you can start server by: C:\Users\username\Desktop\reactApp>npm start
+If the setup is complete you can start server by: ..\reactApp>npm start
 
 It will show you the port we need to open in browser, in your case http://localhost:8080/. 
 
